@@ -284,6 +284,16 @@ exec --no-startup-id start_conky_grey
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
+exec --no-startup-id ss-qt5
+exec --no-startup-id fcitx
+exec --no-startup-id tilda
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id thunderbird
+assign [class="(?i)tilda"] → 1
+assign [class="(?i)google-chrome"] → 2
+assign [class="(?i)thunderbird"] → 4
+
+
 # Theme colors
 client.focused #2ECC71 #2ECC71 #000000 #FFFFFF
 client.unfocused #222222 #222222 #2ECC71 #222222
