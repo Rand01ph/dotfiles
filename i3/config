@@ -129,6 +129,14 @@ bindsym $mod+a focus parent
 # set $ws2 2:
 # set $ws3 3:
 # set $ws3 4:
+workspace 1 output VGA-0
+workspace 2 output VGA-0
+workspace 3 output VGA-0
+workspace 4 output VGA-0
+workspace 5 output DVI-I-0
+workspace 6 output DVI-I-0
+workspace 7 output DVI-I-0
+workspace 8 output DVI-I-0
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -196,6 +204,8 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [instance="QQ.exe"] floating enable
+for_window [instance="QQ.exe"] border none
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -275,6 +285,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-panel
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman
@@ -284,13 +295,12 @@ exec --no-startup-id start_conky_grey
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
-exec --no-startup-id ss-qt5
 exec --no-startup-id fcitx
 exec --no-startup-id tilda
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id thunderbird
 assign [class="(?i)tilda"] → 1
-assign [class="(?i)google-chrome"] → 2
+assign [class="(?i)google-chrome"] → 5
 assign [class="(?i)thunderbird"] → 4
 
 
