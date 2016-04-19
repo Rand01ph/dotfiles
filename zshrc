@@ -87,6 +87,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export LC_CTYPE=zh_CN.UTF-8
+export LC_TIME=en_US.UTF-8
 
 export NVM_DIR="/home/tan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
