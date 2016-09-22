@@ -17,4 +17,9 @@ export XMODIFIERS="@im=fcitx"
 export LC_CTYPE=zh_CN.UTF-8
 export LC_TIME=en_US.UTF-8
 
-xrandr --output VGA-0 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output DVI-I-1 --off --output DVI-I-0 --mode 1280x1024 --pos 1280x0 --rotate normal
+xrandr --output VGA-1 --mode 1280x1024 --pos 0x0 --rotate normal --output DVI-I-1 --mode 1280x1024 --pos 1280x0 --rotate normal
+/usr/bin/xscreensaver -no-splash &
+# Swap Control and Capslock
+/usr/bin/setxkbmap -option "ctrl:swapcaps"
+# Variety
+variety &
