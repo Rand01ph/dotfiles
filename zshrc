@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="half-life"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +49,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo dirhistory docker pyenv python svn-fast-info systemd)
+plugins=(archlinux common-aliases git sudo docker pyenv python svn svn-fast-info systemd extract z)
 
 # User configuration
 
@@ -80,8 +80,10 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+# for pyenv
 export PATH="/home/tan/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -89,5 +91,20 @@ eval "$(pyenv virtualenv-init -)"
 export LC_CTYPE=zh_CN.UTF-8
 export LC_TIME=en_US.UTF-8
 
+# for node.js env
 export NVM_DIR="/home/tan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# load termite config
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
+export TERM=xterm-256color
+
+#Swap Control and Capslock
+/usr/bin/setxkbmap -option "ctrl:swapcaps"
+
+# Jruby
+export PATH=$PATH:/opt/jruby/bin
